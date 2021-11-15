@@ -77,6 +77,7 @@ run(){
 	f=$1
 
 	if [[ "$f" == "" ]]; then
+		rm -rf ./errors
 		main "$args"
 	else
 		$args
