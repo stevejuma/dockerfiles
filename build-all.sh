@@ -25,7 +25,7 @@ build_and_push(){
 	# absolutely no reason
 	n=0
 	until [ $n -ge 5 ]; do
-		docker push --disable-content-trust=false "${REPO_URL}/${base}:${suite}" && break
+		docker buildx build --rm  --force-rm --platform linux/amd64,linux/arm64,linux/arm/v7 --push -t "${REPO_URL}/${base}:${suite}" "${build_dir}" && break
 		echo "Try #$n failed... sleeping for 15 seconds"
 		n=$((n+1))
 		sleep 15
