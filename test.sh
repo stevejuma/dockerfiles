@@ -37,7 +37,7 @@ for f in ${files[@]}; do
 
 	build_dir=$(dirname "$f")
 	base="${build_dir%%\/*}"
-	suite="${build_dir##$base}"
+	suite="${build_dir##"$base"}"
 	suite="${suite##\/}"
 
 	if [[ -z "$suite" ]]; then

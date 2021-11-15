@@ -26,5 +26,6 @@ RUN set -x; \
 
 FROM alpine:latest
 COPY --from=alpine /bin/shellcheck /bin/
-RUN apk add --no-cache bash
+RUN apk add --no-cache --upgrade grep
+RUN apk add --no-cache file bash
 CMD ["shellcheck"]
