@@ -1,3 +1,9 @@
+# Shellcheck
+#
+# docker run \
+#   --rm -it \
+#	stevejuma/shellcheck
+#
 FROM debian:bullseye-slim
 LABEL maintainer "Steve Juma <stevejuma@ju.ma>"
 
