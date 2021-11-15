@@ -39,7 +39,7 @@ get_latest() {
 
 	# Change to upper case for grep
 	local udir
-	udir=$(echo $dir | awk '{print toupper($0)}')
+	udir=$(echo "$dir" | awk '{print toupper($0)}')
 	# Replace dashes (-) with underscores (_)
 	udir=${udir//-/_}
 	udir=${udir%/*}
