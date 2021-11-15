@@ -44,7 +44,5 @@ for f in ${files[@]}; do
 		suite=latest
 	fi
 
-	echo "                       ---                                   "
-	echo "Successfully built ${base}:${suite} with context ${build_dir}"
-	echo "                       ---                                   "
+	./build-all.sh build_and_push "${base}" "${suite}" "${build_dir}"
 done

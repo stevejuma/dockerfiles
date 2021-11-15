@@ -28,6 +28,10 @@ image: ## Build a Dockerfile (ex. DIR=telnet).
 .PHONY: test
 test: dockerfiles shellcheck ## Runs the tests on the repository.
 
+.PHONY: update
+update: ## Rebuilds and updates the docker images that have been updated.
+	@$(CURDIR)/update.sh 
+	
 .PHONY: dockerfiles
 dockerfiles: ## Tests the changes to the Dockerfiles build.
 	@$(CURDIR)/test.sh
