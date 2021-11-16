@@ -16,7 +16,7 @@ get_latest() {
 
 	local resp
 	resp=$(curl -sSL -H "${AUTH_HEADER}" -H "${API_HEADER}" "${URI}/repos/${repo}/releases")
-	if [[ "$repo" != "Radarr/Radarr" ]]; then
+    if [[ "$repo" != "Radarr/Radarr" ]]; then
 		resp=$(echo "$resp" | jq --raw-output '[.[] | select(.prerelease == false)]')
 	fi
 	local tag
@@ -72,6 +72,7 @@ compare() {
 
 projects=(
  koalaman/shellcheck
+ apache/superset
 )
 
 other_projects=()
